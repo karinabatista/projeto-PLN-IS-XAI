@@ -22,6 +22,10 @@ projeto-PLN-IS-XAI/
 │   ├── 02-localidade.ipynb                      # Caracterização da localidade (kNN), heatmaps, métricas, tabela das 16 instâncias
 │   └── 03-wordclouds.ipynb                      # Nuvens de palavras das vizinhanças (baseline, E2SC, biO-IS)
 └── resultados/
+    ├── surveys/
+    │   ├── agnews0_baseline_cosine_survey.pkl    # Vizinhanças kNN — Baseline (5,3 MB)
+    │   ├── agnews0_e2sc_cosine_survey.pkl        # Vizinhanças kNN — E2SC
+    │   └── agnews0_biois_cosine_survey.pkl       # Vizinhanças kNN — biO-IS
     ├── heatmaps/
     │   ├── heatmap_baseline_mtxhit.png           # Mapa HIT — Baseline
     │   ├── heatmap_baseline_mtxerror.png         # Mapa ERROR — Baseline
@@ -54,7 +58,9 @@ projeto-PLN-IS-XAI/
 
 Os arquivos de dados (embeddings `.pkl`, modelos treinados, splits do AGNews) **não estão neste repositório** por questões de tamanho. Os notebooks foram desenvolvidos no Kaggle e referenciam datasets daquela plataforma.
 
-Para reproduzir os resultados:
+> **Nota:** os arquivos `.pkl` de survey (pasta `resultados/surveys/`) têm ~5 MB cada e requerem [Git LFS](https://git-lfs.github.com/) para versionamento no GitHub.
+
+
 
 1. O conjunto AGNews (fold 0) segue o split do benchmark utilizado (`datasets-lbd3`, claudiovaliense).
 2. Os embeddings CLS são gerados pelo notebook `01-treino-e-extracao.ipynb` e devem ser publicados como dataset Kaggle (`agnews-embeddings-is-xai`) para uso nos notebooks seguintes.

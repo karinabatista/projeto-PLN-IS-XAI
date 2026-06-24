@@ -2,7 +2,7 @@
 
 Projeto da disciplina de Processamento de Linguagem Natural (PLN), UFMG.
 
-Este repositório contém o código e os notebooks do estudo sobre o impacto dos métodos de Seleção de Instâncias (E2SC e biO-IS) na localidade semântica e na explicabilidade de modelos BERT aplicados à classificação de textos do conjunto AGNews.
+Este repositório contém o código, os notebooks e os resultados do estudo sobre o impacto dos métodos de Seleção de Instâncias (E2SC e biO-IS) na localidade semântica e na explicabilidade de modelos BERT aplicados à classificação de textos do conjunto AGNews.
 
 ## Resumo
 
@@ -15,13 +15,31 @@ Investigamos se técnicas de Seleção de Instâncias (IS), originalmente voltad
 ```
 projeto-PLN-IS-XAI/
 ├── README.md
+├── artigo/
+│   └── Artigo_PLN_IS_XAI_Versao_Final.pdf      # Artigo final (ACM sigconf, 8 páginas)
 ├── notebooks/
-│   ├── 01-treino-e-extracao.ipynb     # Treino dos modelos E2SC e biO-IS + extração dos embeddings CLS
-│   ├── 02-localidade.ipynb            # Caracterização da localidade (kNN), heatmaps, tabela das 16 instâncias, métricas
-│   └── 03-wordclouds.ipynb            # Nuvens de palavras das vizinhanças (baseline, E2SC, biO-IS)
+│   ├── 01-treino-e-extracao.ipynb               # Treino dos modelos + extração dos embeddings CLS
+│   ├── 02-localidade.ipynb                      # Caracterização da localidade (kNN), heatmaps, métricas, tabela das 16 instâncias
+│   └── 03-wordclouds.ipynb                      # Nuvens de palavras das vizinhanças (baseline, E2SC, biO-IS)
 └── resultados/
-    ├── heatmaps/                      # Mapas de homogeneidade (entropia × distância)
-    └── wordclouds/                    # Figuras comparativas das nuvens de palavras
+    ├── heatmaps/
+    │   ├── heatmap_baseline_mtxhit.png           # Mapa HIT — Baseline
+    │   ├── heatmap_baseline_mtxerror.png         # Mapa ERROR — Baseline
+    │   ├── heatmap_e2sc_mtxhit.png               # Mapa HIT — E2SC
+    │   ├── heatmap_e2sc_mtxerror.png             # Mapa ERROR — E2SC
+    │   ├── heatmap_biois_mtxhit.png              # Mapa HIT — biO-IS
+    │   ├── heatmap_biois_mtxerror.png            # Mapa ERROR — biO-IS
+    │   └── heatmaps_homogeneidade_3cenarios.png  # Painel comparativo dos três cenários
+    ├── tabela_16_completa.csv                    # Métricas das 16 instâncias ilustrativas (entropia, distância, predição)
+    └── wordclouds/
+        ├── figuras_comparativas/                 # Figuras lado a lado (baseline × E2SC × biO-IS) das 4 instâncias do artigo
+        │   ├── comp_1667.png                     # World "Baghdad" (HIT-High)
+        │   ├── comp_194.png                      # Business "Chinese Train" (HIT-Low)
+        │   ├── comp_3216.png                     # Sports "First lessons" (HIT-Low)
+        │   └── comp_5756.png                     # Sci/Tech "Prime time" (ERR-Low)
+        ├── wordclouds_baseline/                  # Nuvens individuais — Baseline (16 instâncias)
+        ├── wordclouds_e2sc/                      # Nuvens individuais — E2SC (16 instâncias)
+        └── wordclouds_biois/                     # Nuvens individuais — biO-IS (16 instâncias)
 ```
 
 ## Metodologia (resumo)
@@ -34,11 +52,15 @@ projeto-PLN-IS-XAI/
 
 ## Dados
 
-Os arquivos de dados (embeddings `.pkl`, modelos treinados, splits do AGNews) **não estão neste repositório** por questões de tamanho. Os notebooks foram desenvolvidos no Kaggle e referenciam datasets daquela plataforma. Para reproduzir:
+Os arquivos de dados (embeddings `.pkl`, modelos treinados, splits do AGNews) **não estão neste repositório** por questões de tamanho. Os notebooks foram desenvolvidos no Kaggle e referenciam datasets daquela plataforma.
 
-1. O conjunto AGNews (fold 0) segue o split do benchmark utilizado.
-2. Os embeddings são gerados pelo notebook `01-treino-e-extracao.ipynb`.
-3. As métricas e figuras são geradas pelos notebooks `02` e `03`.
+Para reproduzir os resultados:
+
+1. O conjunto AGNews (fold 0) segue o split do benchmark utilizado (`datasets-lbd3`, claudiovaliense).
+2. Os embeddings CLS são gerados pelo notebook `01-treino-e-extracao.ipynb` e devem ser publicados como dataset Kaggle (`agnews-embeddings-is-xai`) para uso nos notebooks seguintes.
+3. O baseline de referência utiliza o dataset `bert-family-representations` (Liziane Soares, UFMG).
+4. As métricas, heatmaps e surveys são gerados pelo notebook `02-localidade.ipynb`.
+5. As nuvens de palavras e figuras comparativas são geradas pelo notebook `03-wordclouds.ipynb`.
 
 ## Autores
 

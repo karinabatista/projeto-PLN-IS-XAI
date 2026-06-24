@@ -1,0 +1,17 @@
+grupo,classe,id_test,ent_base,ent_e2sc,ent_biois,Δe2sc,Δbiois
+HIT-High,Business,4331,0.0,0.0,0.0,0.0,0.0
+HIT-High,World,1667,0.0,0.0,0.0,0.0,0.0
+HIT-High,Sports,9472,0.0,0.0,0.0,0.0,0.0
+HIT-High,SciTech,4206,0.0,0.0,0.0,0.0,0.0
+HIT-Low,Business,194,1.212,0.353,0.675,-0.859,-0.537
+HIT-Low,World,532,1.032,0.469,0.906,-0.563,-0.127
+HIT-Low,Sports,3216,1.459,0.0,1.183,-1.459,-0.276
+HIT-Low,SciTech,1769,0.948,0.211,0.42,-0.737,-0.528
+ERR-High,Business,5809,0.0,0.353,0.0,0.353,0.0
+ERR-High,World,1588,0.0,0.353,0.0,0.353,0.0
+ERR-High,Sports,114,0.0,0.211,0.211,0.211,0.211
+ERR-High,SciTech,1714,0.0,0.211,0.211,0.211,0.211
+ERR-Low,Business,402,1.372,1.438,0.353,0.066,-1.019
+ERR-Low,World,4434,0.997,0.561,0.353,-0.436,-0.643
+ERR-Low,Sports,5236,1.0,0.353,1.538,-0.647,0.538
+ERR-Low,SciTech,5756,1.806,1.347,0.561,-0.46,-1.245

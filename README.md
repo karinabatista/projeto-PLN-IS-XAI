@@ -16,7 +16,7 @@ Investigamos se técnicas de Seleção de Instâncias (IS), originalmente voltad
 projeto-PLN-IS-XAI/
 ├── README.md
 ├── artigo/
-│   └── Artigo_PLN_IS_XAI_Versao_Final.pdf      # Artigo final (ACM sigconf, 8 páginas)
+│   └── Artigo_PLN_IS_XAI_Versao_Final_26_06_26.pdf      # Artigo final (ACM sigconf, 8 páginas)
 ├── notebooks/
 │   ├── 01-treino-e-extracao.ipynb               # Treino dos modelos + extração dos embeddings CLS
 │   ├── 02-localidade.ipynb                      # Caracterização da localidade (kNN), heatmaps, métricas, tabela das 16 instâncias

@@ -8,7 +8,7 @@ Este repositório contém o código, os notebooks e os resultados do estudo sobr
 
 Investigamos se técnicas de Seleção de Instâncias (IS), originalmente voltadas à eficiência computacional, também alteram a organização semântica do espaço representacional aprendido por modelos BERT. Treinamos três modelos (baseline com treino completo, E2SC e biO-IS), extraímos os embeddings do token [CLS] e caracterizamos a localidade das vizinhanças por kNN (k=30, distância do cosseno), seguindo a metodologia de Soares (2025).
 
-**Principal achado:** a IS tem um efeito dissociado sobre a localidade. Os dois métodos aproximam os vizinhos (maior similaridade), mas a concentração em regiões de alta homogeneidade aumenta apenas com o biO-IS (70,5% contra 65,4% do baseline), enquanto o E2SC a reduz (50,2%). A remoção de ruído do biO-IS limpa as fronteiras de classe, enquanto o E2SC, focado em redundância, compacta o espaço mas eleva a entropia média. A eficácia se mantém nos dois, com Macro-F1 igual ou superior ao baseline usando 17 a 21% menos dados de treino.
+**Principal achado:** a IS tem um efeito dissociado sobre a localidade. Os dois métodos aproximam os vizinhos (maior similaridade), mas a concentração em regiões de alta homogeneidade aumenta apenas com o biO-IS (70,5% contra 65,4% do baseline), enquanto o E2SC a reduz (50,2%). O biO-IS, que combina remoção de redundância e ruído, favorece essa concentração, enquanto o E2SC, focado apenas em redundância, compacta o espaço mas eleva a entropia média. A eficácia se mantém nos dois, com Macro-F1 igual ou superior ao baseline usando 17 a 21% menos dados de treino.
 
 ## Estrutura do repositório
 
